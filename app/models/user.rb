@@ -8,4 +8,8 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :votes
 
+  def already_voted_this?(context, context_type)
+      return self.votes.where(voteable_type: context_type, voteable_id: context.id).first != nil
+  end
+
 end
