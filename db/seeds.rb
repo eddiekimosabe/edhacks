@@ -1,7 +1,5 @@
 require 'faker'
 
-languages = %w(ruby python java javascript html css)
-
 
 def adj_noun_comment
 	adjs = %w(Awesome Cool Clear Super Great Good Nice Smooth Jacked Rockin Great Cool Super Clear)
@@ -32,16 +30,19 @@ def create_comment
 	return sentence_comment if comment_type == 3
 end
 
+langs = %w(Java Python C C++ Ruby JavaScript C# HTML CSS)
+langs.each { |lang| Language.create(name: lang) }
 
 
 10.times do
   User.create(email: Faker::Internet.email, password: "password")
 end
 
+num_langs = langs.length
 User.all.each do |user|
   10.times do
-  	lang_id = rand(languages.length) 
-    user.links << Link.create(title: Faker::Lorem.sentence, url: Faker::Internet.url, language: languages[lang_id], vote_count: rand(300))
+  	lang_id = rand(num_langs) + 1 
+    user.links << Link.create(title: Faker::Lorem.sentence, url: Faker::Internet.url, language_id: lang_id, vote_count: rand(300))
   end
 end
 

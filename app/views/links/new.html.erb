@@ -12,7 +12,7 @@
 
   <p>
     <%= f.label :language %><br>
-    <%= f.text_field :language %>
+    <%= f.select :language, options_for_select(%w[Java Python C C++ Ruby JavaScript C# HTML CSS]) %>
   </p>
 
   <p>

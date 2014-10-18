@@ -1,0 +1,10 @@
+<div>
+
+	<% @languages = Language.all %>
+<ul class="languages">
+	<li><a href="/">ALL</a></li>
+	<% @languages.each do |lang| %>
+		<li><%= link_to lang.name, language_path(lang) %></li>
+	<% end %>
+</ul>
+</div>
