@@ -1,5 +1,18 @@
 class VotesController < ApplicationController
 
+  def create
+    @context = context_obj
+    @vote = Vote.new(user_id: current_user.id, voteable_id: @context.id, voteable_type: context_type)
+    if current_user.already_voted_this?(@context, context_type)
+      redirect_to context_path
+    else
+      @vote.save
+      @context.update(vote_count: @context.vote_count + 1)
+      redirect_to context_path
+    end
+  end
+
+
   private
   def vote_params
     params.require(:vote).permit(:user_id, :voteable_id)
