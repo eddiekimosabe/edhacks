@@ -2,19 +2,19 @@ Rails.application.routes.draw do
   devise_for :users
 
   
-  resources :links do
-    resources :comments
-  end
-
   concern :votable do
     resources :votes, only: [:create, :update]
+  end
+
+  resources :links, concerns: :votable do
+    resources :comments, concerns: :votable
   end
 
   # You can have the root of your site routed with "root"
   root 'links#index'
 
-  post 'linksvotes' => 'votes#createLinkVote'
-  post 'commentsvotes' => 'votes#createCommentVote'
+  # post 'linksvotes' => 'votes#createLinkVote'
+  # post 'commentsvotes' => 'votes#createCommentVote'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

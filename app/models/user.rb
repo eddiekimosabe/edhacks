@@ -5,11 +5,11 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :links
-  has_many :comments
+  has_many :comments, through: :links
   has_many :votes
 
   def already_voted_this?(context, context_type)
-      return self.votes.where(voteable_type: context_type, voteable_id: context.id).first != nil
+      return self.votes.where(votable_type: context_type, votable_id: context.id).first != nil
   end
 
 end
