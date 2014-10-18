@@ -5,6 +5,11 @@ Rails.application.routes.draw do
   resources :links do
     resources :comments
   end
+
+  concern :votable do
+    resources :votes, only: [:create, :update]
+  end
+
   # You can have the root of your site routed with "root"
   root 'links#index'
 

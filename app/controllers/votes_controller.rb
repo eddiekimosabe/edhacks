@@ -2,7 +2,7 @@ class VotesController < ApplicationController
 
   def create
     @context = context_obj
-    @vote = Vote.new(user_id: current_user.id, voteable_id: @context.id, voteable_type: context_type)
+    @vote = Vote.new(user_id: current_user.id, votable_id: @context.id, votable_type: context_type)
     if current_user.already_voted_this?(@context, context_type)
       redirect_to context_path
     else
@@ -15,23 +15,23 @@ class VotesController < ApplicationController
 
   private
   def vote_params
-    params.require(:vote).permit(:user_id, :voteable_id)
+    params.require(:vote).permit(:user_id, :votable_id)
   end
 
-  def voteable_is_comment?
+  def votable_is_comment?
     params[:comment_id] ? true : false
   end
 
   def context_obj
-    voteable_is_comment? ? Comment.find(params[:comment_id]) : Link.find(params[:link_id])
+    votable_is_comment? ? Comment.find(params[:comment_id]) : Link.find(params[:link_id])
   end
 
   def context_type
-    voteable_is_comment? ? "Comment" : "Link"
+    votable_is_comment? ? "Comment" : "Link"
   end
 
   def context_path
-      voteable_is_comment? ? link_path(context_obj.link) : link_path(context_obj)
+      votable_is_comment? ? link_path(context_obj.link) : link_path(context_obj)
   end
 
 
