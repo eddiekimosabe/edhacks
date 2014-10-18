@@ -1,0 +1,7 @@
+<% if @link.comments.length != 0 %>
+<% @link.comments.each do |c| %>
+<%= c.text  %>
+<%= c.user.email  %>
+<br>
+<% end %>
+<% end %>
