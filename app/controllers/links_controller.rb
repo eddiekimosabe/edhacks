@@ -6,8 +6,6 @@ class LinksController < ApplicationController
 
 	# def index_by_language(lang)
 	def index_by_language
-		puts params
-		10.times { puts "XXXXXX" }
 		@links = Link.where(language: "python")
 	end
 

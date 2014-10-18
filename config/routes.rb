@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     resources :votes, only: [:create, :update]
   end
 
+  resources :languages
+
   resources :links, concerns: :votable do
     resources :comments, concerns: :votable
   end
