@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  root 'links#index'
+  
   resources :links do
     resources :comments
   end
@@ -56,5 +56,4 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
->>>>>>> fa9eb2392db52d67ba9eab97ac660202eaaa6081
 end
