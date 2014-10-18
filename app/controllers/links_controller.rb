@@ -4,6 +4,10 @@ class LinksController < ApplicationController
 		@links = Link.all.order("vote_count DESC")
 	end
 
+	def index_by_language(lang)
+		@links = Link.where(language: lang)
+	end
+
 	def show
 		@link = Link.find(params[:id])
 		@comment = Comment.new

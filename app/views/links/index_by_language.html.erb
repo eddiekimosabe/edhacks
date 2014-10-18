@@ -1,0 +1,13 @@
+<div class="link_list">
+  <% @links.each do |l| %>
+
+    <p>
+    	<%= l.title %> <br><strong><%= l.language %></strong>
+    		:  <%= l.url %><br> 
+    	<%= link_to 'Show Link', link_path(l) %>
+    	 [<%= l.vote_count %>]
+    	
+    </p>
+
+  <% end %>
+<div>

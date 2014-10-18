@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'links#index'
 
+  get 'links_by_lang' => 'links#index_by_language'
   # post 'linksvotes' => 'votes#createLinkVote'
   # post 'commentsvotes' => 'votes#createCommentVote'
 
