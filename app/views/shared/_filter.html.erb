@@ -1,10 +1,10 @@
 <div>
 
-  <a href="/links_by_lang/python">python</a>
-  <a href="/links_by_lang">javascript</a>
-  <a href="/links_by_lang">ruby</a>
-  <a href="/links_by_lang">html</a>
-  <a href="/links_by_lang">css</a>
-
-
+	<% @languages = Language.all %>
+<ul class="languages">
+	<li><a href="/">ALL</a></li>
+	<% @languages.each do |lang| %>
+		<li><%= link_to lang.name, language_path(lang) %></li>
+	<% end %>
+</ul>
 </div>
