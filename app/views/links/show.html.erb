@@ -24,8 +24,7 @@
   <h3>Comments</h3>
   <% if current_user %>
     <%= render partial: "comments/form" %>
-  <% end %><br><br><br><br>
-
+  <% end %><br>
 
   <%= render partial: "comments/index", object: @link.comments %>
 

@@ -1,7 +1,21 @@
-<% if @link.comments.length != 0 %>
-<% @link.comments.each do |c| %>
-<%= c.text  %>
-<%= c.user.email  %>
-<br>
-<% end %>
+<% @link.comments.order("vote_count DESC").each do |c| %>
+<div class="comment">
+  <% c_votes = c.vote_count == nil ? 0 : c.vote_count %>
+
+  <div id="comment_credentials">
+    <span id="comment_label">COMMENT</span>
+    <span id="comment_votes"><%= c_votes %></span>
+    <span id="comment_email"><%= c.user.email %></span>
+
+    <% if current_user %>
+      <%= form_tag("/links/#{@link.id}/comments/#{c.id}/votes", method: "post") do %>
+        <br><span id="like_button"><%= submit_tag("Like") %></span><br><br>
+        <% end %>
+    <% end %>
+  </div>
+
+  <% time = c.created_at.in_time_zone("Eastern Time (US & Canada)") %>
+  <p id="comment_text"><%= c.text %></p>
+  <p id="comment_time"><%= time.strftime("%m/%d/%Y %I:%M%p") %></p><br>
+</div>
 <% end %>
