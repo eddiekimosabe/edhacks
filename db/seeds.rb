@@ -14,7 +14,7 @@ User.all.each do |user|
 end
 
 Link.all.each do |link|
-	rand(8).times do
+	rand(10).times do
 		userid = rand(10)+1
 		Comment.create(user_id: userid, link_id: link.id, text: Faker::Lorem.sentence, vote_count: rand(200))
 	end
