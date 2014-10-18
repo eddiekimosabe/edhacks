@@ -3,7 +3,8 @@ class CreateVotes < ActiveRecord::Migration
     create_table :votes do |t|
 	    t.integer :user_id
 	    t.integer :votable_id, polymorphic: true
-	    t.string :votable_type    
+	    t.string :votable_type   
+	    t.integer :polarity 
 
       t.timestamps
     end
