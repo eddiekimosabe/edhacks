@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20141018173903) do
     t.string   "title"
     t.string   "language"
     t.integer  "user_id"
+    t.integer  "vote_count", default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -56,6 +57,7 @@ ActiveRecord::Schema.define(version: 20141018173903) do
     t.integer  "user_id"
     t.integer  "votable_id"
     t.string   "votable_type"
+    t.integer  "polarity"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
