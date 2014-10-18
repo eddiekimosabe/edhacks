@@ -2,9 +2,9 @@
   <% @links.each do |l| %>
 
     <p>
-    	<a href=<%= l.id %> > <%= l.language %>
-    		<%= l.title %>:  <%= l.url %><br> [<%= l.vote_count %>]
-    	</a>
+    	<a href=<%= l.id %> > <%= l.title %> </a> <%= l.language %>
+    		:  <%= l.url %><br> [<%= l.vote_count %>]
+    	
     </p>
 
   <% end %>
