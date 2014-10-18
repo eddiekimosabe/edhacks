@@ -1,13 +1,13 @@
 class LinksController < ApplicationController
 
 	def index
-		@links = Link.all
+		@links = Link.all.order("vote_count DESC")
 	end
 
 	def show
 		@link = Link.find(params[:id])
 		@comment = Comment.new
-		@comments = @link.comments
+		@comments = @link.comments.order("vote_count DESC")
 	end
 
 	def new
