@@ -11,11 +11,19 @@ class LinksController < ApplicationController
 	end
 
 	def new
-		@link = Link.new
+		return redirect_to '/', alert: "Login or Signup first" unless current_user
+    @link = current_user.links.build
 	end
 
 	def create
-		@link = Link.new(link_params)
+    return redirect_to '/', alert: "Login or Signup first" unless current_user
+
+    @link = current_user.links.build(link_params)
+    if @link.save
+      redirect_to link_path(@link)
+    else
+      redirect_to new_link_path, :alert => @link.errors.full_messages.join(". ")
+    end
 	end
 
 	def link_params
