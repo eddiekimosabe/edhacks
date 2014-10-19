@@ -2,10 +2,40 @@ body {
   font-family: "Open Sans", sans-serif;
   font-size: 18px;
   line-height: 1.67em;
+  background-color: #a1d6bd;
 }
 
-.languages li {
+.filter {
+	margin-bottom: 25px;
+}
+
+.nav li {
 	display: inline-block;
 	text-decoration: none;
-	margin: 0 10px;
+}
+
+.nav li a {
+	color: black;
+}
+
+.name {
+  font-family: Lobster;
+  font-size: 85px;
+  margin-top: 25px
+}	
+
+.col-md-3 {
+	margin-top: 25px;
+}
+
+.col-md-9 a {
+	color:black;
+}
+
+.link_list p a {
+	color:black;
+}
+
+.shared_links a {
+	color:black;
 }
