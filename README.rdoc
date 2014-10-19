@@ -1,28 +1,11 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This site was a project done at the 2014 edhacks.org hackathon. The point of this site is to provide aspiring developers with the best learning resources on the web by allowing them to upvote and submit material.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Project Manager: Tatiana Tylosky
+Product Manager: Christopher Liu
+Designer: Aliona Katz
+Developers: Edward Kim & Alan Florendo
 
 
-Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
