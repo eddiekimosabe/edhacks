@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     resources :votes, only: [:create, :update]
   end
 
+  resources :languages
+
   resources :links, concerns: :votable do
     resources :comments, concerns: :votable
   end
@@ -13,6 +15,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'links#index'
 
+  get 'links_by_lang' => 'links#index_by_language'
   # post 'linksvotes' => 'votes#createLinkVote'
   # post 'commentsvotes' => 'votes#createCommentVote'
 

@@ -16,8 +16,8 @@
 
 
 <%= @link.title %><br>
-<%= @link.language %><br>
-<%= @link.url %><br>
+<%= @link.language.name %><br>
+<%= link_to @link.url, @link.url %><br>
 
   <div id="back_to_links_index"><%= link_to "<< Back to links", root_url %></div><br><br><br>
 

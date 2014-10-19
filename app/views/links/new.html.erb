@@ -1,0 +1,23 @@
+<%= form_for @link do |f| %>
+
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :url %><br>
+    <%= f.text_field :url %>
+  </p>
+
+  <p>
+    <%= f.label :language %><br>
+    <%= f.collection_select(:language_id, Language.all, :id, :name) %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+
+<% end %>

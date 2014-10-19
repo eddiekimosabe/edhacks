@@ -4,6 +4,7 @@ class LinksController < ApplicationController
 		@links = Link.all.order("vote_count DESC")
 	end
 
+
 	def show
 		@link = Link.find(params[:id])
 		@comment = Comment.new
@@ -11,15 +12,25 @@ class LinksController < ApplicationController
 	end
 
 	def new
-		@link = Link.new
+		return redirect_to '/', alert: "Login or Signup first" unless current_user
+    @link = current_user.links.build
+    @languages = Language.all
+    # @language = @languages.each{ |language| language.name}
 	end
 
 	def create
-		@link = Link.new(link_params)
+    return redirect_to '/', alert: "Login or Signup first" unless current_user
+
+    @link = current_user.links.build(link_params)
+    if @link.save
+      redirect_to link_path(@link)
+    else
+      redirect_to new_link_path, :alert => @link.errors.full_messages.join(". ")
+    end
 	end
 
 	def link_params
-		params.require(:link).permit(:title, :url, :language, :user_id, :vote_count)
+		params.require(:link).permit(:title, :url, :language_id, :user_id, :vote_count)
 	end
 
 end
