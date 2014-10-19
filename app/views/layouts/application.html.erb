@@ -3,13 +3,20 @@
   <head>
     <title>Edhacks</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+
     <title>Edful</title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
   <body>
-    
+  <div class="row">
+    <div class="name col-md-9">
+      Edful
+    </div>
+  </div>
+
     <div class="container">
       <%= render "shared/nav"%>
       <%= yield %>

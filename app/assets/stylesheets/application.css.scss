@@ -14,3 +14,34 @@
  *= require_self
  */
 
+.votes {
+  display: inline;
+}
+
+.list {
+  /*padding: 30px;*/
+  /*margin-left: 30px;*/
+  /*display: inline;*/
+}
+
+.title {
+    display: inline;
+}
+
+.resource {
+  padding: 5px;
+}
+
+.name {
+  font-family: Lobster;
+  font-size: 100px;
+  padding-left: 50px;
+}
+
+body {
+  /*background-color: #a1d6bd;*/
+}
+
+div {
+  border: 1px solid black;
+}
