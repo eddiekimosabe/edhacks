@@ -1,9 +1,9 @@
-<div>
+<div class="filter">
 
 	<% @languages = Language.all %>
 
-<ul class="languages">
-	<li><a href="/">ALL</a></li>
+<ul class="nav nav-tabs" role="tablist">
+	<li><%= link_to "Home", "root_path" %> <li>
 	<% @languages.each do |lang| %>
 		<li><%= link_to lang.name, language_path(lang) %></li>
 	<% end %>
