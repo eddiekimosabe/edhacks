@@ -4,10 +4,6 @@ class LinksController < ApplicationController
 		@links = Link.all.order("vote_count DESC")
 	end
 
-	# def index_by_language(lang)
-	def index_by_language
-		@links = Link.where(language: "python")
-	end
 
 	def show
 		@link = Link.find(params[:id])
