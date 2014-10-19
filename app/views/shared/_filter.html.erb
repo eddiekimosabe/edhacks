@@ -3,7 +3,7 @@
 	<% @languages = Language.all %>
 
 <ul class="nav nav-tabs" role="tablist">
-	<li><%= link_to "Home", "root_path" %> <li>
+	<li><%= link_to "Home", root_path %> <li>
 	<% @languages.each do |lang| %>
 		<li><%= link_to lang.name, language_path(lang) %></li>
 	<% end %>

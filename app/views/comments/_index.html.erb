@@ -9,7 +9,7 @@
 
     <% if current_user %>
       <%= form_tag("/links/#{@link.id}/comments/#{c.id}/votes", method: "post") do %>
-        <br><span id="like_button"><%= submit_tag("Like") %></span><br><br>
+        <br><span id="like_button"><%= submit_tag("Like", class:"btn btn-default") %></span><br><br>
         <% end %>
     <% end %>
   </div>
