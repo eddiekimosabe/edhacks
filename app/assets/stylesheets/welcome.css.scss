@@ -1,3 +1,47 @@
-// Place all the styles related to the welcome controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.navbar {
+	float: right;
+	margin-top: 20px;
+}
+	#logo {
+		float:left;
+		position:absolute;
+}
+
+div .header {
+	position: relative;
+	margin-bottom: 100px;
+}
+
+
+div .login {
+	text-align: center;
+	width: 100%;
+}
+	h2 {
+		font-size: 2em;
+		font-weight: bold;
+		text-align: center;
+
+}
+
+
+div .signup {
+	text-align: center;
+	width: 100%;
+}	
+	h2 {
+		font-size: 2em;
+		font-weight: bold;
+		text-align: center;
+}
+
+input {
+	border-radius: 3px;
+}
+
+
+
+/*.btn {
+	width: 100%;
+}*/
+

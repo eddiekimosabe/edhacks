@@ -1,11 +1,19 @@
+<div class="header">
+	<% if user_signed_in? %>
+		<div class="navbar" >  
+		  Logged in as <strong><%= current_user.email %></strong>.
+		  <%= link_to 'Edit profile', edit_user_registration_path%> |
+		  <%= link_to 'Create new link', new_link_path%> |
+		  <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+		</div>
 
-<% if user_signed_in? %>
-  Logged in as <strong><%= current_user.email %></strong>.
-  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-  <%= link_to 'Create new link', new_link_path, :class => 'navbar-link' %> |
-  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-<% else %>
-  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-	
-<% end %>
+	<% else %>
+	    <h1 id="logo"><%= link_to 'Edful', root_path%></h1>
+
+		<div class="navbar" >  
+		  <%= link_to "Sign up", new_user_registration_path %> |
+		  <%= link_to "Login", new_user_session_path %>
+		</div>
+		
+	<% end %>
+</div>

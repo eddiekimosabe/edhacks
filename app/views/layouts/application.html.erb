@@ -7,14 +7,9 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
+    
     <div class="container">
-      <div id="logo">
-        <p><a href="/">Edful</a></p>
-        <p>tagline...tagline...tagline...tagline</p>
-      </div>
-      <p class="navbar-text pull-right">
-        <%= render "shared/nav"%><p>
-        
+      <%= render "shared/nav"%>
       <%= yield %>
     </div>
 
