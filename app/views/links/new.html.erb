@@ -12,7 +12,7 @@
 
   <p>
     <%= f.label :language %><br>
-    <%= f.select :language, options_for_select(%w[Java Python C C++ Ruby JavaScript C# HTML CSS]) %>
+    <%= f.collection_select(:language_id, Language.all, :id, :name) %>
   </p>
 
   <p>
