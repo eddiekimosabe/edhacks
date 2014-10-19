@@ -9,7 +9,7 @@
 
 div .header {
 	position: relative;
-	margin-bottom: 80px;
+	padding-bottom: 40px;
 }
 
 div .login {
@@ -34,6 +34,19 @@ div .signup {
 
 input {
 	border-radius: 3px;
+}
+
+.row {
+	background-color:#a1d6bd;
+	width:100%;
+	padding: 20px;
+}
+
+.container {
+	padding:0;
+	margin-left: 10%;
+	margin-right: 10%;
+
 }
 
 

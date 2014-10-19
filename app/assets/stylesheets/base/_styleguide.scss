@@ -2,11 +2,15 @@ body {
   font-family: "Open Sans", sans-serif;
   font-size: 18px;
   line-height: 1.67em;
-  background-color: #a1d6bd;
+  background-color: white;
 }
 
 .filter {
 	margin-bottom: 25px;
+}
+
+.nav-tabs {
+	border-bottom: solid black 1px;
 }
 
 .nav li {
