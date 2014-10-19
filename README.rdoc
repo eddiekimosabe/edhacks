@@ -2,8 +2,8 @@
 
 This site was a project done at the 2014 edhacks.org hackathon. The point of this site is to provide aspiring developers with the best learning resources on the web by allowing them to upvote and submit material.
 
-Project Manager: Tatiana Tylosky "\n"
-Product Manager: Christopher Liu "\n"
-Designer: Aliona Katz "\n"
-Developers: Edward Kim & Alan Florendo "\n"
+Project Manager: Tatiana Tylosky \n
+Product Manager: Christopher Liu \n
+Designer: Aliona Katz \n
+Developers: Edward Kim & Alan Florendo \n
 
