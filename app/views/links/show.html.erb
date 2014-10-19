@@ -1,3 +1,4 @@
+<div class="show"> 
 <h1 id="link_title"><%= @link.title %> </h1>
 
 
@@ -7,25 +8,21 @@
     <div id="link_votes">
       <%= form_for [@link, Vote.new] do |f| %>
         <span id="link_vote_count"><%= f.label "#{@link.vote_count} votes" %></span> <br>
-        <br>
-        <%= f.submit "Like This Link!"%> <br>
+        <%= f.submit "Like!", class:"btn btn-default"%> <br>
         <br>
       <% end %>
     </div>
     <% end %>
 
-
 <%= @link.title %><br>
 <%= @link.language.name %><br>
 <%= link_to @link.url, @link.url %><br>
 
-  <div id="back_to_links_index"><%= link_to "<< Back to links", root_url %></div><br><br><br>
+  <div id="back_to_links_index"><%= link_to "Back", root_url %></div><br>
 
   <h3>Comments</h3>
-  <% if current_user %>
-    <%= render partial: "comments/form" %>
-  <% end %><br>
-
-  <%= render partial: "comments/index", object: @link.comments %>
-
+    <% if current_user %>
+      <%= render partial: "comments/form" %>
+    <% end %><br><br>
+    <%= render partial: "comments/index", object: @link.comments %>    
 </div>
