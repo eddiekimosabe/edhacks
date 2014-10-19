@@ -1,11 +1,21 @@
 <div class="header">
+
+
 	<% if user_signed_in? %>
+  <div class="row">
+    <div class="name col-md-9">
+      Edful
+    </div>
+
+
+
 		<div class="navbar" >  
 		  Logged in as <strong><%= current_user.email %></strong>.
 		  <button  type="button" class="btn btn-info""><%= link_to 'Edit profile', edit_user_registration_path%></button>
 		  <button  type="button" class="btn btn-info""><%= link_to 'Create new link', new_link_path%></button>
 		  <button  type="button" class="btn btn-info""><%= link_to "Logout", destroy_user_session_path, method: :delete %></button>
 		</div>
+    </div>
 
 	<% else %>
 	    <h1 id="logo"><%= link_to 'Edful', root_path%></h1>
